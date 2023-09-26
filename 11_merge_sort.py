@@ -188,6 +188,14 @@ print (f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
 
 divs = juncs = comps = 0
 
+tracemalloc.start()
+hora_ini = time()
+nomes_ord = merge_sort(nomes)
+hora_fim = time()
+
+mem_atual, mem_pico = tracemalloc.ger_traced_memory()
+tracemalloc.stop()
+
 
 from data.nomes_desord import nomes
 
@@ -207,3 +215,4 @@ print(f"tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
 
 print (f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
 
+print(f"Pico de memória: {mem_pico / 1024 / 1024}MB")

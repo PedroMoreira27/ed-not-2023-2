@@ -9,7 +9,7 @@ def busca_binaria(lista, val):
         que o valor de busca não existe na lista.
     """
     ini = 0 #Inicio da lista
-    fim =len(lista) - 1 #Fim da lista
+    fim =len(lista) #Fim da lista
 
     while ini <= fim:
         #Calculando o meio da lista
@@ -31,3 +31,5 @@ def busca_binaria(lista, val):
         
         #Se chegamos até este ponto, o valor de busca NÃO EXISTE na lista
         return -1
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+print(busca_binaria(nums, 10))
